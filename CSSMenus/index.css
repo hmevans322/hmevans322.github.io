@@ -33,7 +33,7 @@ h1 {
 
 .profile {
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 50px auto;
   max-width: 700px;
   width: 90%;
@@ -46,17 +46,46 @@ h1 {
 .profile img{
   max-width: 300px;
 }
-.bio {
-  width: 100%;
+.profile .artist-image{
+  background-image: url("https://i1.sndcdn.com/avatars-zkg2HALZkQfw07cM-FgXPKA-t500x500.jpg");
+  height: 300px;
+  width: 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 9px;
 }
-.bio p{
+@media screen and (max-width: 700px) {
+  .profile { 
+    flex-direction: column; 
+    align-items: center;
+  }
+  .profile .artist-image{
+    width: 100%;
+    background-size: 100%;
+    background-position: initial;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile {
+    background-color:red;
+  }
+}
+.bio {
+  width: 60%;
+}
+.bio p, .song-list p{
   text-align:center;
   font-family: Bebas Neue, cursive;
   font-size: 30px;
   color:blueviolet;
 }
 
-.bio ul{
+.song-list ul{
   font-family: Bebas Neue, cursive;
+  
 }
-
+.song-list {
+  width: 100%;
+}
